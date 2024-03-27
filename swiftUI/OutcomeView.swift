@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct OutcomeView: View {
-    @Binding var gender: String
     @Binding var age: String
+    @Binding var gender: String
     @Binding var air_polution: String
     @Binding var alcohol_use: String
     @Binding var dust_allergy: String
@@ -33,7 +33,7 @@ struct OutcomeView: View {
     @Binding var snoring: String
     @State private var pred: Prediction?
     var body: some View {
-        let query=gender+","+age+","+air_polution+","+alcohol_use+","+dust_allergy+","+occupational_hazards+","+genetic_risk+","+chronic_lung_disease+","+balanced_diet+","+obesity+","+smoking+","+passive_smoker+","+chest_pain+","+coughing_of_blood+","+fatigue+","+weight_loss+","+shortness_of_breath+","+wheezing+","+swallowing_difficulty+","+clubbing_of_finger_nails+","+frequent_cold+","+dry_cough+","+snoring
+        let query=age+","+gender+","+air_polution+","+alcohol_use+","+dust_allergy+","+occupational_hazards+","+genetic_risk+","+chronic_lung_disease+","+balanced_diet+","+obesity+","+smoking+","+passive_smoker+","+chest_pain+","+coughing_of_blood+","+fatigue+","+weight_loss+","+shortness_of_breath+","+wheezing+","+swallowing_difficulty+","+clubbing_of_finger_nails+","+frequent_cold+","+dry_cough+","+snoring
 
         VStack(spacing:20) {
             Circle()
@@ -63,7 +63,7 @@ struct OutcomeView: View {
         }
     }
     func getPrediction(queryStr: String) async throws -> Prediction {
-        let endpoint="https://b1evxcq7v3.execute-api.us-east-1.amazonaws.com/test/helloworld?greeter="+queryStr
+        let endpoint="https://b1evxcq7v3.execute-api.us-east-1.amazonaws.com/test/lung-cancer?data="+queryStr
         print(endpoint)
         guard let url=URL(string: endpoint) else {
             throw GHError.invalidURL
@@ -85,5 +85,4 @@ struct OutcomeView: View {
 struct Prediction: Codable {
     let outcome: String
 }
-
 

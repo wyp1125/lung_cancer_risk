@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var gender: String=""
     @State private var age: String=""
+    @State private var gender: String=""
     @State private var air_polution: String=""
     @State private var alcohol_use: String=""
     @State private var dust_allergy: String=""
@@ -35,33 +35,33 @@ struct ContentView: View {
         NavigationStack {
             Form {
                  ScrollView{
-                        Text("Evaluate your lung cancer risk")
-                        TextField("Enter gender 1 for male or 2 for femail", text: $gender)
+                        Text("Evaluate your lung cancer risk (decimal input is required")
                         TextField("Enter age", text: $age)
-                        TextField("Enter air polution level 1-8", text: $air_polution)
-                        TextField("Enter alcohol use level 1-8", text: $alcohol_use)
-                        TextField("Enter dust allergy level 1-8", text: $dust_allergy)
-                        TextField("Enter occupational hazard level 1-8", text: $occupational_hazards)
-                        TextField("Enter genetic risk level 1-7", text: $genetic_risk)
-                        TextField("Enter chronic lun disease level 1-7", text: $chronic_lung_disease)
-                        TextField("Enter balanced diet level 1-7", text: $balanced_diet)
-                        TextField("Enter obesity level 1-7", text: $obesity)
-                        TextField("Enter smoking level 1-8", text: $smoking)
-                        TextField("Enter passive smoker level 1-8", text: $passive_smoker)
-                        TextField("Enter chest pain level 1-8", text: $chest_pain)
-                        TextField("Enter coughing of blood level 1-9", text: $coughing_of_blood)
-                        TextField("Enter fatigue level 1-9", text: $fatigue)
-                        TextField("Enter weight loss level 1-8", text: $weight_loss)
-                        TextField("Enter shortness of breath level 1-8", text: $shortness_of_breath)
-                        TextField("Enter wheezing level 1-8", text: $wheezing)
-                        TextField("Enter swalling difficulty level 1-8", text: $swallowing_difficulty)
-                        TextField("Enter clubbing of finger nails level 1-9", text: $clubbing_of_finger_nails)
-                        TextField("Enter frequent cold level 1-7", text: $frequent_cold)
-                        TextField("Enter dry cough level 1-7", text: $dry_cough)
-                        TextField("Enter snoring level 1-7", text: $snoring)
+                        TextField("Enter gender 1.0 for male or 2.0 for femail", text: $gender)
+                        TextField("Enter air polution level 1.0-8.0", text: $air_polution)
+                        TextField("Enter alcohol use level 1.0-8.0", text: $alcohol_use)
+                        TextField("Enter dust allergy level 1.0-8.0", text: $dust_allergy)
+                        TextField("Enter occupational hazard level 1.0-8.0", text: $occupational_hazards)
+                        TextField("Enter genetic risk level 1.0-7.0", text: $genetic_risk)
+                        TextField("Enter chronic lun disease level 1.0-7.0", text: $chronic_lung_disease)
+                        TextField("Enter balanced diet level 1.0-7.0", text: $balanced_diet)
+                        TextField("Enter obesity level 1.0-7.0", text: $obesity)
+                        TextField("Enter smoking level 1.0-8.0", text: $smoking)
+                        TextField("Enter passive smoker level 1.0-8.0", text: $passive_smoker)
+                        TextField("Enter chest pain level 1.0-8.0", text: $chest_pain)
+                        TextField("Enter coughing of blood level 1.0-9.0", text: $coughing_of_blood)
+                        TextField("Enter fatigue level 1.0-9.0", text: $fatigue)
+                        TextField("Enter weight loss level 1.0-8.0", text: $weight_loss)
+                        TextField("Enter shortness of breath level 1.0-8.0", text: $shortness_of_breath)
+                        TextField("Enter wheezing level 1.0-8.0", text: $wheezing)
+                        TextField("Enter swalling difficulty level 1.0-8.0", text: $swallowing_difficulty)
+                        TextField("Enter clubbing of finger nails level 1.0-9.0", text: $clubbing_of_finger_nails)
+                        TextField("Enter frequent cold level 1.0-7.0", text: $frequent_cold)
+                        TextField("Enter dry cough level 1.0-7.0", text: $dry_cough)
+                        TextField("Enter snoring level 1.0-7.0", text: $snoring)
                      NavigationLink("Show your risk level") {
-                 OutcomeView(gender: $gender,
-                             age: $age,
+                 OutcomeView(age: $age,
+                             gender: $gender,
                              air_polution: $air_polution,
                              alcohol_use: $alcohol_use,
                              dust_allergy: $dust_allergy,
@@ -93,4 +93,3 @@ struct ContentView: View {
 #Preview {
     ContentView()
 }
-
